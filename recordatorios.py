@@ -1,31 +1,25 @@
-# Lista inicial de recordatorios
-recordatorios = [
-    {"fecha": "2021-07-15", "hora": "09:00", "descripcion": "No hacer nada es Feriado"},
-    {"fecha": "2021-05-01", "hora": "09:00", "descripcion": "Día del Trabajo"},
-    # Agregar recordarorio Ramada
-    {"fecha": "2021-09-18", "hora": "16:00", "descripcion": "Ramadas"},
-]
+recordatorios = [['2021-01-01', "11:00", "Levantarse y ejercitar"],
+ ['2021-05-01', "15:00", "No trabajar"],
+ ['2021-07-15', "13:00", "No hacer nada es feriado"],
+ ['2021-09-18', "16:00", "Ramadas"],
+ ['2021-12-25', "00:00", "Navidad"]]
 
-# Agregar el evento del 1 de Enero de 2021 a las 11 de la mañana para “Levantarse y ejercitar"
-recordatorios.append({"fecha": "2021-01-01", "hora": "11:00", "descripcion": "Levantarse y ejercitar"})
-# Agregar el 2 de Febrero de 2021 a las 6 de la mañana para “Empezar el Año”
-recordatorios.append({"fecha": "2021-02-02", "hora": "06:00", "descripcion": "Empezar el Año"})
+#asignamos recordatorios antiguos a nuevo apra tener un respaldo y guardar la nueva version de recordatorios
+nuevo_recordatorio = recordatorios
 
-# Editar el vento del 15 de Julio para que sea el 16 de Julio
-for recordatorio in recordatorios:
-    if recordatorio["fecha"] == "2021-07-15":
-        recordatorio["fecha"] = "2021-07-16"
+#1. Agregamos nuevo evento al recordatorio en un ligar en especifico
+nuevo_recordatorio.insert(1, ['2021-02-02', "06:00", "Empezar el Año"])
 
-# Eliminar el evento del Día del Trabajo
-recordatorios = [recordatorio for recordatorio in recordatorios if recordatorio["descripcion"] != "Día del Trabajo"]
+#2. Editamos un evento en concreto
+nuevo_recordatorio[3] = ['2021-07-16', "13:00", "No hacer nada es feriado"]
 
-# Agregar cena de Navidad y de Año Nuevo a las 22 hrs
-recordatorios.append({"fecha": "2021-12-24", "hora": "22:00", "descripcion": "Cena de Navidad"})
-recordatorios.append({"fecha": "2021-12-31", "hora": "22:00", "descripcion": "Cena de Año Nuevo"})
+#3. Eliminar un evento en especifico
+del nuevo_recordatorio[2]
 
-# Ordenar los recordatorios por fecha y hora
-recordatorios.sort(key=lambda x: (x["fecha"], x["hora"]))
+#4. Agregar Cena de Navidad en un lugar en especifico y Año nuevo al final donde corresponde
+nuevo_recordatorio.insert(4,['2021-12-24', "22:00", "Cena de Navidad"])
+nuevo_recordatorio.append(['2021-12-31', "22:00", "Cena de Año Nuevo"])
 
-# Mostrar los recordatorios actualizados
-for recordatorio in recordatorios:
-    print(recordatorio)
+#Nuevo Output
+print("Nuevo Listado de Recordatorios")
+print(nuevo_recordatorio)
