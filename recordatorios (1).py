@@ -7,7 +7,7 @@ recordatorios = [['2021-01-01', "11:00", "Levantarse y ejercitar"],
 #asignamos recordatorios antiguos a nuevo apra tener un respaldo y guardar la nueva version de recordatorios
 nuevo_recordatorio = recordatorios
 
-#1. Agregamos nuevo evento al recordatorio en un ligar en especifico
+#1. Agregamos nuevo evento al recordatorio en un lugar en especifico
 nuevo_recordatorio.insert(1, ['2021-02-02', "06:00", "Empezar el Año"])
 
 #2. Editamos un evento en concreto
